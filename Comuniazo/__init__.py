@@ -28,9 +28,9 @@ class Comuniazo:
             except:
                 partido["resultado"] = ""
             try:
-                partido["1"] = float(match.find("a",{"class":"odd-1"}).text.replace("1 • ",""))
-                partido["x"] = float(match.find("a",{"class":"odd-x"}).text.replace("X • ",""))
-                partido["2"] = float(match.find("a",{"class":"odd-2"}).text.replace("2 • ",""))
+                partido["1"] = float(match.find("a",{"class":"odd-1"}).text.split()[-1])
+                partido["x"] = float(match.find("a",{"class":"odd-x"}).text.split()[-1])
+                partido["2"] = float(match.find("a",{"class":"odd-2"}).text.split()[-1])
             except:
                 partido["1"] = 0.0
                 partido["x"] = 0.0
