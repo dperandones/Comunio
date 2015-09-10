@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-import pp
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
 from Comuniazo import Comuniazo
-c = Comuniazo.new()
+c = Comuniazo()
 c.load_jornada()
 c.load_players()
-pp c.jornada
+pp.pprint(c.jornada)
