@@ -45,7 +45,7 @@ for partido in c.jornada:
         if len(jugador)==3:
             print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_jornada"].encode("utf-8") +"</td>"
         elif len(jugador)==4:
-            print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_casa"].encode("utf-8") +"</td>" + jugador["media_casa"].encode("utf-8") +"</td>"
+            print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_fuera"].encode("utf-8") +"</td>" + jugador["media_fuera"].encode("utf-8") +"</td>"
         else:
             print "<td>Algo estás haciendo mal</td>"
         print "</tr>"
