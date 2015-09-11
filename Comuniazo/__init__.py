@@ -52,14 +52,14 @@ class Comuniazo:
                 for player in casa.find_all("tr",{"class":None}):
                     if(len(player.find_all("td"))>3):
                         new_player = {
-                            "position" : player.find_all("td")[0].text,
+                            "posicion" : player.find_all("td")[0].text,
                             "nombre" : player.find_all("td")[1].text,
                             "puntos_casa" : player.find_all("td")[2].text,
                             "media_casa" : player.find_all("td")[3].text
                         }
                     else:
                         new_player = {
-                            "position" : player.find_all("td")[0].text,
+                            "posicion" : player.find_all("td")[0].text,
                             "nombre" : player.find_all("td")[1].text,
                             "puntos_jornada" : player.find_all("td")[2].text
                         }
@@ -71,14 +71,14 @@ class Comuniazo:
                 for player in fuera.find_all("tr",{"class":None}):
                     if(len(player.find_all("td"))>3):
                         new_player = {
-                            "position" : player.find_all("td")[0].text,
+                            "posicion" : player.find_all("td")[0].text,
                             "nombre" : player.find_all("td")[1].text,
                             "puntos_fuera" : player.find_all("td")[2].text,
                             "media_fuera" : player.find_all("td")[3].text
                         }
                     else:
                         new_player = {
-                            "position" : player.find_all("td")[0].text,
+                            "posicion" : player.find_all("td")[0].text,
                             "nombre" : player.find_all("td")[1].text,
                             "puntos_jornada" : player.find_all("td")[2].text
                         }

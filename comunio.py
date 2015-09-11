@@ -12,25 +12,46 @@ c = Comuniazo()
 c.load_jornada()
 c.load_players()
 
+
+
+
+
+print "Content-type: text/html"
+print ""
+print ""
+print "<html><head></head><style>.equipo{float: left}</style><body>"
+
 for partido in c.jornada:
 	print "<div class='partido'>"
 	print "<div class='equipo casa'>"
-	print "<img src='http://www.futbolfantasy.com/uploads/images/alineaciones/" + equipos[partido["casa"]] + ".jpg?v=" +  str(time.time()) + "'>"	
+	print "<img src='http://www.futbolfantasy.com/uploads/images/alineaciones/" + equipos[partido["casa"]] + ".jpg?v=" +  str(time.time()) + "'>"
 	print "<table>"
 	for jugador in partido["jugadores_casa"]:
 		print "<tr>"
-		print "<td>" + jugador["nombre"].encode("utf-8") +"</td>"
-		print "</tr>"
+        if len(jugador)==3:
+            print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_jornada"].encode("utf-8") +"</td>"
+        elif len(jugador)==4:
+            print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_casa"].encode("utf-8") +"</td>" + jugador["media_casa"].encode("utf-8") +"</td>"
+        else:
+            print "<td>Algo estás haciendo mal</td>"
+        print "</tr>"
 	print "</table>"
 	print "</div>"
 	print "<div class='equipo fuera'>"
-	print "<img src='http://www.futbolfantasy.com/uploads/images/alineaciones/" + equipos[partido["fuera"]] + ".jpg?v=" +  str(time.time()) + "'>"	
+	print "<img src='http://www.futbolfantasy.com/uploads/images/alineaciones/" + equipos[partido["fuera"]] + ".jpg?v=" +  str(time.time()) + "'>"
 	print "<table>"
 	for jugador in partido["jugadores_fuera"]:
 		print "<tr>"
-		print "<td>" + jugador["nombre"].encode("utf-8") +"</td>"
-		print "</tr>"
+        if len(jugador)==3:
+            print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_jornada"].encode("utf-8") +"</td>"
+        elif len(jugador)==4:
+            print "<td>" + jugador["nombre"].encode("utf-8") +"</td>" + "<td>" + jugador["posicion"].encode("utf-8") +"</td>" + "<td>" + jugador["puntos_casa"].encode("utf-8") +"</td>" + jugador["media_casa"].encode("utf-8") +"</td>"
+        else:
+            print "<td>Algo estás haciendo mal</td>"
+        print "</tr>"
 	print "</table>"
 	print "</div>"
 	print "</div>"
 	print "<div class='clear'></div>"
+
+print "</body></html>"
